@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server'
-import { jsonResponse } from 'pages/api/utils'
+import { jsonResponse } from 'pages/utils'
 
 export const config = {
   runtime: 'edge'

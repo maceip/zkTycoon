@@ -1,13 +1,5 @@
-import { safeEncode } from 'pages/api/utils';
+import { safeEncode } from 'pages/utils';
 import * as api from './api';
-export const config = {
-    'runtime': 'edge',
-    unstable_allowDynamic: [
-        '/lib/utils.ts',
-        './node_modules/.pnpm/cbor-x@1.5.0/node_modules/cbor-x/decode.js',
-        './node_modules/.pnpm/cbor-x@1.5.0/node_modules/cbor-x/encode.js',
-      ],
-  };
 
 export async function assertion(abortController: AbortController) {
     const { challenge } = await api.Assertion.generate();

@@ -1,5 +1,5 @@
 import * as schema from  '@lib/schema'
-import { decode, safeByteDecode } from 'pages/api/utils';
+import { decode, safeByteDecode } from 'pages/utils';
 
 const makeRequest = (endpoint: string, data: object = {}) =>
     fetch(

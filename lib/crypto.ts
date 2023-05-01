@@ -1,4 +1,4 @@
-import { byteStringToBuffer } from '../pages/api/utils';
+import { byteStringToBuffer } from '../pages/utils';
 
 export enum Digests {
     SHA256 = 'SHA-256',

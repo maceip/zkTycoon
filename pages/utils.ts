@@ -4,7 +4,6 @@ import {
   encode as _toBase64Url,
 } from '@lib/base64';
 
-
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 export const encode = encoder.encode.bind(encoder);

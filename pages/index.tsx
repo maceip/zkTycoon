@@ -7,14 +7,17 @@ import {
   Button,
   Snippet,
 } from '@vercel/examples-ui'
-import {attestation} from './api/attestation'
-import {assertion} from './api/assertion'
+import {attestation} from './attestation'
+import {assertion} from './assertion'
 
 import { USER_TOKEN } from '@lib/constants'
 
 export default function Index() {
   async function loginWebAuth(email: string) {
        console.log(await attestation(new AbortController, email)) 
+  }
+  async function finalizeAuth(){
+    console.log(assertion(new AbortController))
   }
   return (
     <Page>
@@ -41,6 +44,13 @@ export default function Index() {
         <Button
           onClick={() => {
              loginWebAuth("xxx")
+          }}
+        >
+          Set the {USER_TOKEN} cookie
+        </Button>
+        <Button
+          onClick={() => {
+             finalizeAuth()
           }}
         >
           Set the {USER_TOKEN} cookie

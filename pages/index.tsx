@@ -7,17 +7,22 @@ import {
   Button,
   Snippet,
 } from '@vercel/examples-ui'
+import { useRouter } from 'next/router'
 import {attestation} from '../lib/attestation'
 import {assertion} from '../lib/assertion'
 
 import { USER_TOKEN } from '@lib/constants'
 
 export default function Index() {
+  const router = useRouter()
   async function loginWebAuth(email: string) {
        console.log(await attestation(new AbortController, email)) 
   }
   async function finalizeAuth(){
-    console.log(assertion(new AbortController))
+    const {isVerified} = await assertion(new AbortController)
+    if (isVerified)
+      await fetch('/api/auth', { method: 'POST' })
+      router.push('/protected')
   }
   return (
     <Page>

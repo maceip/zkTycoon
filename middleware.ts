@@ -7,12 +7,7 @@ export const config = {
 
 export async function middleware(req: NextRequest) {
   // validate the user is authenticated
-  console.log("MIDDLEWARE: ", req.nextUrl.pathname)
-  if (req.nextUrl.pathname.startsWith('/login')) {
-      return await addToken(req).catch((err) => {
-        console.error(err.message)
-      })
-  }
+
   const verifiedToken = await verifyAuth(req).catch((err) => {
     console.error(err.message)
   })

@@ -17,6 +17,8 @@ export class AuthError extends Error {}
  */
 export async function addToken(req:NextRequest) {
   const token = req.cookies.get(USER_TOKEN)?.value
+  if (!token) throw new AuthError('Missing user token')
+
   try {
     return await setUserCookie(jsonResponse(200, { success: true }))
   } catch (err) {

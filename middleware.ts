@@ -7,7 +7,7 @@ export const config = {
 
 export async function middleware(req: NextRequest) {
   // validate the user is authenticated
-  if (req.nextUrl.pathname.startsWith('login')) {
+  if (req.nextUrl.pathname.startsWith('/login')) {
       return await addToken(req).catch((err) => {
         console.error(err.message)
       })

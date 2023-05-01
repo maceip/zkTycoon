@@ -20,9 +20,10 @@ export default function Index() {
   }
   async function finalizeAuth(){
     const {isVerified} = await assertion(new AbortController)
-    if (isVerified)
-      await fetch('/api/auth', { method: 'POST' })
+    if (isVerified) {
+      const resp = await fetch('/api/auth', { method: 'POST' })
       router.push('/protected')
+    }
   }
   return (
     <Page>

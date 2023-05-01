@@ -1,6 +1,6 @@
 {
   "name": "tycoon",
-  "repository": "https://github.com/vercel/examples.git",
+  "repository": "https://github.com/maceip/zkTycoon.git",
   "license": "MIT",
   "private": true,
   "scripts": {

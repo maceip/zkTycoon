@@ -1,15 +1,17 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { verifyAuth } from '@lib/auth'
+import { verifyAuth, addToken } from '@lib/auth'
 
 export const config = {
-  matcher: [ '/api/protected', '/protected' ],
-  unstable_allowDynamic: [
-    '/lib/utils.ts',
-  ],
+  matcher: [ '/api/protected', '/protected', '/login' ],
 }
 
 export async function middleware(req: NextRequest) {
   // validate the user is authenticated
+  if (req.nextUrl.pathname.startsWith('login')) {
+      return await addToken(req).catch((err) => {
+        console.error(err.message)
+      })
+  }
   const verifiedToken = await verifyAuth(req).catch((err) => {
     console.error(err.message)
   })

@@ -1,7 +1,9 @@
-import type { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { nanoid } from 'nanoid'
 import { SignJWT, jwtVerify } from 'jose'
 import { USER_TOKEN, getJwtSecretKey } from './constants'
+import { jsonResponse } from '@lib/utils'
+
 
 interface UserJwtPayload {
   jti: string
@@ -13,6 +15,15 @@ export class AuthError extends Error {}
 /**
  * Verifies the user's JWT token and returns its payload if it's valid.
  */
+export async function addToken(req:NextRequest) {
+  const token = req.cookies.get(USER_TOKEN)?.value
+  try {
+    return await setUserCookie(jsonResponse(200, { success: true }))
+  } catch (err) {
+    console.error(err)
+    return jsonResponse(500, { error: { message: 'Authentication failed.' } })
+  }
+}
 export async function verifyAuth(req: NextRequest) {
   const token = req.cookies.get(USER_TOKEN)?.value
 

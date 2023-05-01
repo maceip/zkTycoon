@@ -1,4 +1,4 @@
-export const USER_TOKEN = 'user-token'
+export const USER_TOKEN = 'session_id'
 
 const JWT_SECRET_KEY: string | undefined = process.env.JWT_SECRET_KEY!
 

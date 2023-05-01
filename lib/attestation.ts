@@ -1,5 +1,5 @@
 import { COSEAlgorithm } from '@lib/crypto';
-import { encode, safeEncode } from 'pages/utils';
+import { encode, safeEncode } from '@lib/utils';
 import * as api from './api';
 
 export async function attestation(

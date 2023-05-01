@@ -7,8 +7,8 @@ import {
   Button,
   Snippet,
 } from '@vercel/examples-ui'
-import {attestation} from './attestation'
-import {assertion} from './assertion'
+import {attestation} from '../lib/attestation'
+import {assertion} from '../lib/assertion'
 
 import { USER_TOKEN } from '@lib/constants'
 

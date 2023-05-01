@@ -1,4 +1,4 @@
-import { safeEncode } from 'pages/utils';
+import { safeEncode } from '@lib/utils';
 import * as api from './api';
 
 export async function assertion(abortController: AbortController) {

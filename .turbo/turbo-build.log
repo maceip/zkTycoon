@@ -14,16 +14,12 @@ info  - Generating static pages (4/4)
 info  - Finalizing page optimization...
 
 Route (pages)                              Size     First Load JS
-┌ ○ /                                      7.07 kB        87.9 kB
+┌ ○ /                                      7.14 kB          88 kB
 ├   /_app                                  0 B            80.9 kB
 ├ ○ /404                                   182 B            81 kB
-├ λ /api/api                               0 B            80.9 kB
-├ ℇ /api/assertion                         0 B            80.9 kB
-├ λ /api/attestation                       0 B            80.9 kB
 ├ ℇ /api/auth                              0 B            80.9 kB
 ├ ℇ /api/expire                            0 B            80.9 kB
 ├ ℇ /api/protected                         0 B            80.9 kB
-├ λ /api/utils                             0 B            80.9 kB
 └ ○ /protected                             1.46 kB        82.3 kB
 + First Load JS shared by all              84.3 kB
   ├ chunks/framework-ac88a2a245aea9ab.js   45.2 kB
@@ -35,6 +31,5 @@ Route (pages)                              Size     First Load JS
 ƒ Middleware                               44.1 kB
 
 ℇ  (Streaming)  server-side renders with streaming (uses React 18 SSR streaming or Server Components)
-λ  (Server)     server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)     automatically rendered as static HTML (uses no initial props)
 

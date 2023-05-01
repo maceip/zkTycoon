@@ -1,6 +1,6 @@
 import { type NextRequest } from 'next/server'
 import { setUserCookie } from '@lib/auth'
-import { jsonResponse } from 'pages/utils'
+import { jsonResponse } from '@lib/utils'
 
 export const config = {
   runtime: 'edge'

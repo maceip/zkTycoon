@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import {
-  decode as _fromBase64Url,
-  encode as _toBase64Url,
+  encode as _fromBase64Url,
+  decode as _toBase64Url,
 } from 'next-base64';
 
 

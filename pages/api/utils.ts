@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import {
-  encode as _fromBase64Url,
-  decode as _toBase64Url,
-} from 'next-base64';
+  decode as _fromBase64Url,
+  encode as _toBase64Url,
+} from '@lib/base64';
 
 
 const encoder = new TextEncoder();

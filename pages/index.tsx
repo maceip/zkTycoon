@@ -7,7 +7,7 @@ import {
   Button,
   Snippet,
 } from '@vercel/examples-ui'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import {attestation} from '../lib/attestation'
 import {assertion} from '../lib/assertion'
 
